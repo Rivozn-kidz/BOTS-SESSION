@@ -27,7 +27,7 @@ const {
     prepareWAMessageMedia,
     generateWAMessageFromContent,
     S_WHATSAPP_NET
-} = require('baileys');
+} = require('@ridz-coder/mawrldpulse');
 
 const config = require('./config');
 
