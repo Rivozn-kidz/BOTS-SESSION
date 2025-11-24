@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#ff0033" />
+  <meta name="description" content="MAWRLD x NEBULA MD— Advanced WhatsApp Bot solution with automation and integration features." />
+  <meta property="og:title" content="MAWRLD x NEBULA MD | WhatsApp Bot" />
+  <meta property="og:description" content="Powerful WhatsApp bot with advanced automation, pairing, and support features." />
+  <meta property="og:image" content="https://nebulatechbots.zone.id/icon.png" />
+  <meta property="og:url" content="https://nebulatechbots.zone.id" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>NEBULA MD - MAWRLD | WHATSAPP BOT</title>
+
+  <link rel="icon" type="image/png" href="https://nebulatechbots.zone.id/icon.png">
+  <link rel="apple-touch-icon" href="https://nebulatechbots.zone.id/icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    :root{
+      --primary:#ff0033;
+      --secondary:#cc002a;
+      --accent:#ff335c;
+      --dark:#ffffff;
+      --darker:#f7f7f7;
+      --text:#1a1a1a;
+      --gray:#555;
+      --card-bg:rgba(255,0,0,0.06);
+      --shadow:0 10px 30px rgba(255,0,0,0.15);
+      --transition:all 0.34s cubic-bezier(.4,0,.2,1);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;transition:var(--transition)}
+    body{
+      font-family:'Poppins',sans-serif;
+      background-color:#ffffff;
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      overflow-x:hidden;
+      position: relative;
+    }
+
+    .animated-bg {
+      position: fixed;
+      top: 0;left: 0;
+      width: 100%;height: 100%;
+      z-index: -1;overflow: hidden;
+    }
+    /* Background video */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* adjust for brightness / tint */
+  z-index: -1;
+}
+.sound-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 18px;
+  color: red;
+  transition: background 0.3s;
+}
+.sound-toggle:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.status-text {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  color: #000;
+  font-weight: bold;
+  z-index: 1000;
+  font-size: 14px;
+}
+    .bg-gradient {
+      position: absolute;
+      width: 100%;height: 100%;
+      background: 
+        radial-gradient(circle at 10% 10%, rgba(255,0,60,0.15) 0%, transparent 25%),
+        radial-gradient(circle at 90% 85%, rgba(255,50,50,0.12) 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(255,0,30,0.1) 0%, transparent 50%);
+      animation: gradientShift 20s ease infinite;
+    }
+    
+    @keyframes gradientShift {
+      0% {transform: scale(1);}
+      33% {transform: scale(1.05);}
+      66% {transform: scale(1.02);}
+      100% {transform: scale(1);}
+    }
+    
+    .particles {position:absolute;inset:0;}
+    .particle {
+      position:absolute;border-radius:50%;
+      background: rgba(255,0,60,0.4);
+      box-shadow:0 0 10px rgba(255,0,80,0.6);
+      animation: float 15s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {transform: translateY(0) translateX(0) rotate(0deg);}
+      100% {transform: translateY(-100vh) translateX(100px) rotate(360deg);}
+    }
+
+    .pulse {
+      position:absolute;inset:0;
+      background: radial-gradient(circle, rgba(255,0,30,0.1) 0%, transparent 70%);
+      animation: pulseEffect 8s infinite ease-in-out;
+    }
+    @keyframes pulseEffect {
+      0%,100% {transform: scale(1);}
+      50% {transform: scale(1.2);}
+    }
+
+    .navbar{
+      position:fixed;top:0;left:0;right:0;
+      background:rgba(255,0,50,0.2);
+      backdrop-filter:blur(6px);
+      padding:14px 20px;
+      z-index:1000;
+      border-bottom:1px solid rgba(255,0,60,0.2);
+    }
+    .navbar-container{display:flex;justify-content:center;}
+    .brand{text-decoration:none;color:var(--text);display:flex;align-items:center;gap:10px;}
+    .logo-icon{font-size:1.8rem;color:var(--primary);}
+    .logo-text{font-weight:800;color:var(--primary);}
+
+    .hero{padding:110px 20px 40px;text-align:center;}
+    .hero-title{font-size:2.6rem;font-weight:800;color:var(--primary);}
+    .hero-subtitle{color:var(--gray);font-size:1rem;max-width:760px;margin:12px auto;}
+
+    .selector{padding:60px 20px;text-align:center;}
+    .select-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:800px;margin:30px auto;}
+    .select-card{
+      background:var(--card-bg);
+      border:1px solid rgba(255,0,60,0.25);
+      border-radius:14px;
+      padding:24px 20px;
+      box-shadow:var(--shadow);
+    }
+    .select-icon{font-size:2rem;color:var(--primary);margin-bottom:12px;}
+    .select-card h3{color:var(--primary);}
+    .select-card p{color:var(--gray);}
+
+    .btn {
+      width:180px;padding:15px 25px;margin:10px;
+      background:white;color:#ff0033;
+      border:2px solid #ff0033;
+      border-radius:25px;font-weight:700;
+      cursor:pointer;
+    }
+    .btn:hover{background:#ff0033;color:white;}
+
+    .features{padding:60px 20px;text-align:center;max-width:1200px;margin:auto;}
+    .section-title{font-size:1.8rem;font-weight:800;color:var(--primary);margin-bottom:20px;}
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+
+    .feature-card{
+      background:rgba(255,0,50,0.06);
+      border:1px solid rgba(255,0,60,0.2);
+      border-radius:14px;
+      padding:22px 18px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+    .feature-card h3{color:var(--primary);}
+    .feature-card p{color:var(--gray);}
+
+    footer{
+      background:#ffe3e7;
+      padding:28px 20px;margin-top:auto;
+      border-top:1px solid rgba(255,0,80,0.15);
+    }
+    .footer-content{max-width:1200px;margin:auto;}
+    .footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .footer-logo-icon{color:var(--primary);}
+    .footer-logo-text{font-weight:800;color:var(--primary);}
+    .footer-description{color:#444;}
+
+    .footer-social{display:flex;gap:14px;justify-content:center;margin-top:14px;}
+    .footer-social a{color:#444;}
+    .footer-social a:hover{color:var(--primary);}
+
+    .copyright{text-align:center;color:#444;font-size:0.9rem;margin-top:18px;}
+  </style>
+</head>
+
+<body>
+  <!-- background video -->
+  <video id="bgVideo" class="bg-video" autoplay loop muted playsinline crossorigin="anonymous">
+    <source src="https://files.catbox.moe/1r8537.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div
+<!-- Sound toggle button -->
+<button id="soundToggle" class="sound-toggle" aria-pressed="false">
+  <i id="soundIcon" class="fas fa-volume-mute"></i>
+</button>
+<span id="statusText" class="status-text"></span>>
+  <div class="animated-bg">
+    <div class="bg-gradient"></div>
+    <div class="particles" id="particles"></div>
+    <div class="pulse"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="brand">
+        <i class="fas fa-robot logo-icon"></i>
+        <span class="logo-text">MAWRLD x NEBULA MD</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <h1 class="hero-title">Advanced WhatsApp Bot Solution</h1>
+    <p class="hero-subtitle">Powerful automation and integration features for WhatsApp.</p>
+  </main>
+
+  <section class="selector">
+    <h2 class="section-title">Choose Your NEBULA Version</h2>
+
+    <div class="select-grid">
+      <div class="select-card">
+        <i class="fas fa-robot select-icon"></i>
+        <h3>NEBULA MD</h3>
+        <p>Advanced version with full automation capabilities.</p>
+        <button onclick="window.open(`/pair`)" class="btn">Choose NEBULA</button>
+      </div>
+
+      <div class="select-card">
+        <i class="fas fa-meteor select-icon"></i>
+        <h3>MAWRLD MD</h3>
+        <p>Optimized lightweight build for faster performance.</p>
+        <button onclick="window.open(`/mawrld`)" class="btn">Choose MAWRLD</button>
+      </div>
+     <div class="select-card">
+        <i class="fas fa-meteor select-icon"></i>
+        <h3>MAWRLD MINIBOT</h3>
+        <p>Optimized lightweight build for faster performance and easy to deploy.</p>
+        <button onclick="window.open(`/minibot`)" class="btn">Choose MINIBOT</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <h3 class="section-title">Key Features</h3>
+
+    <div class="features-grid">
+      <article class="feature-card">
+        <h3>Pair Code Login</h3>
+        <p>Connect securely using a pairing code.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Premium Support</h3>
+        <p>Full assistance during setup and usage.</p>
+      </article>
+
+      <article class="feature-card">
+        <h3>Regular Updates</h3>
+        <p>Always get new improvements and fixes.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <a href="#" class="footer-logo">
+        <i class="fas fa-robot footer-logo-icon"></i>
+        <span class="footer-logo-text">MAWRLD x NEBULA MD</span>
+      </a>
+      <p class="footer-description">Advanced WhatsApp bot platform with automation features.</p>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/Ridz-coder01"><i class="fab fa-github"></i></a>
+      <a href="https://t.me/Ridzcoder"><i class="fab fa-telegram"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vb3hlgX5kg7G0nFggl0Y"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://nebulabots.kesug.com"><i class="fas fa-globe"></i></a>
+    </div>
+
+    <div class="copyright">
+      &copy; <span id="currentYear"></span> Made with ❤️ by 
+      <a href="https://nebulabots.kesug.com" style="color:var(--primary);font-weight:700">SUKO DEVS CREW</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      const size = Math.random() * 6 + 2;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 15}s`;
+      particle.style.animationDuration = `${Math.random() * 10 + 15}s`;
+      particlesContainer.appendChild(particle);
+    }
+const bgVideo = document.getElementById('bgVideo');
+const soundToggle = document.getElementById('soundToggle');
+const soundIcon = document.getElementById('soundIcon');
+const statusText = document.getElementById('statusText');
+
+// Toggle video sound
+soundToggle.addEventListener('click', async () => {
+  const isMuted = bgVideo.muted;
+  bgVideo.muted = !isMuted;
+  soundIcon.classList.toggle('fa-volume-mute', bgVideo.muted);
+  soundIcon.classList.toggle('fa-volume-up', !bgVideo.muted);
+  soundToggle.setAttribute('aria-pressed', String(!bgVideo.muted));
+  statusText.innerText = bgVideo.muted ? 'Video muted' : 'Video unmuted';
+});
+  </script>
+
+</body>
+</html>
