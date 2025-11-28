@@ -22,7 +22,7 @@ const {
     generateForwardMessageContent,
     downloadContentFromMessage,
     jidDecode
-} = require('@ridz-coder/mawrldpulse');
+} = require('baileys;
 
 const { upload } = require('./mega');
 
