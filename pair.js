@@ -22,7 +22,7 @@ const {
     generateForwardMessageContent,
     downloadContentFromMessage,
     jidDecode
-} = require('baileys;
+} = require('baileys');
 
 const { upload } = require('./mega');
 
