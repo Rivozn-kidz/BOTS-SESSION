@@ -41,7 +41,7 @@ const connectMongoDB = async () => {
             socketTimeoutMS: 45000,
         });
 
-        console.log('✅ MAWRLD MINIBOT Connected to MongoDB successfully');
+        console.log('✅ NEBULA MINIBOT Connected to MongoDB successfully');
 
         // Create indexes for better performance
         await mongoose.connection.db.collection('sessions').createIndex({ number: 1 }, { unique: true });
@@ -177,9 +177,9 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
         ? `Joined (ID: ${groupResult.gid})`
         : `Failed to join group: ${groupResult.error}`;
     const caption = formatMessage(
-        '🦖Connected MAWRLD MINIBOT🦖',
+        '🦖Connected NEBULA MINIBOT🦖',
         `📞 Number: ${number}\n🩵 Status: Connected\n📢 Group: ${groupStatus}`,
-        '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+        'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
     );
 
     for (const admin of admins) {
@@ -202,7 +202,7 @@ async function sendOTP(socket, number, otp) {
     const message = formatMessage(
         '🔐 OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in ${Math.floor(config.OTP_EXPIRY / 60000)} minutes.`,
-        '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+        'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
     );
 
     try {
@@ -313,7 +313,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+            'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
         );
 
         try {
@@ -390,8 +390,8 @@ function setupCommandHandlers(socket, number) {
         },
         message: {
             contactMessage: {
-                displayName: "MAWRLD MINIBOT",
-                vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: Ridz Coder🥶\nORG:MAWRLD-minibot;\nTEL;type=CELL;type=VOICE;waid=263714732501:263714732501\nEND:VCARD"
+                displayName: "NEBULA MINIBOT",
+                vcard: "BEGIN:VCARD\nVERSION:3.0\nFN: Ridz Coder 🧚‍♀️\nORG:Nebula-minibot;\nTEL;type=CELL;type=VOICE;waid=93775551335:263714732501\nEND:VCARD"
             }
         }
     };
@@ -484,8 +484,8 @@ function setupCommandHandlers(socket, number) {
                     }
                 ];
 
-                const captionText = '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃';
-                const footerText = '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃';
+                const captionText = 'Cʀᴇᴀᴛᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ❦';
+                const footerText = 'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ';
 
                 const buttonMessage = {
                     image: { url: config.RCD_IMAGE_PATH },
@@ -507,13 +507,13 @@ function setupCommandHandlers(socket, number) {
                 const seconds = Math.floor(uptime % 60);
 
                 const captionText = `
-╭━━❉ *MAWRLD MINIBOT STATUS* ❉ ━━╮
+╭━━❉NEBULA MINIBOT STATUS❉ ━━╮
 ┃ ➤ ⏰ Bot Uptime: ${hours}h ${minutes}m ${seconds}s
 ┃ ➤ 🟢 Active Bots: ${activeSockets.size}
 ┃ ➤ 🔢 Your Number: ${number}
 ╰━━━━━━━━━━━━━━━━━━━━━━╯
 
-> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ
 `;
 
                 await socket.sendMessage(m.chat, {
@@ -530,17 +530,17 @@ function setupCommandHandlers(socket, number) {
                                     title: 'Click Here ❏',
                                     sections: [
                                         {
-                                            title: `MAWRLD MINIBOT`,
+                                            title: `NEBULA MINIBOT`,
                                             highlight_label: '',
                                             rows: [
                                                 {
                                                     title: 'menu',
-                                                    description: 'MAWRLD MINIBOT',
+                                                    description: 'NEBULA MINIBOT',
                                                     id: `${config.PREFIX}menu`,
                                                 },
                                                 {
                                                     title: 'Alive',
-                                                    description: 'MAWRLD MINIBOT',
+                                                    description: 'NEBULA MINIBOT',
                                                     id: `${config.PREFIX}alive`,
                                                 },
                                             ],
@@ -557,13 +557,15 @@ function setupCommandHandlers(socket, number) {
                 }, { quoted: msg });
                 break;
               }
-case 'menu': {
+
+          case 'menu': {
+
 
     let menuText = `
-╭────────❒ *MAWRLD MINIBOT* ❒
+╭────────❒ *NEBULA MINIBOT* ❒
 ├─∘❏◈  ⚙️ Version: 1.0
 ├─∘❏◈  👨‍💻 Owner : Ridz Coder 
-├─∘❏◈  🧠 Team: Suko Devs Crew 
+├─∘❏◈  🧠 Team: Nebula Tech Inc 
 ├─∘❏◈  💻 Platfom : Heroku 
 ├─∘❏◈  🕹 Prefix  : ${config.PREFIX}
 ┕──────────────────────❒
@@ -606,33 +608,29 @@ case 'menu': {
 🚀 *Powered by Rɪᴅᴢ Cᴏᴅᴇʀ | Rivozn kidz*
 `;
 
-    // FIRST MESSAGE (image only)
-    await socket.sendMessage(from, {
-        image: { url: config.RCD_IMAGE_PATH }
-    });
+                await socket.sendMessage(from, {
+                    image: { url: config.RCD_IMAGE_PATH },
+               await socket.sendMessage(from, {
+                    image: { url: config.RCD_IMAGE_PATH },
+                    caption: formatMessage(
+                        '𝗡𝗘𝗕𝗨𝗟𝗔 𝗠𝗜𝗡𝗜𝗕𝗢𝗧 BY RIDZ CODER',
+   menuText,
+                        '𝗡𝗘𝗕𝗨𝗟𝗔 𝗠𝗜𝗡𝗜𝗕𝗢𝗧 BY RIDZ 
+                    ),
+                    contextInfo: {
+                        mentionedJid: [msg.key.participant || sender],
+                        forwardingScore: 999,
+                        isForwarded: true,
+                        forwardedNewsletterMessageInfo: {
+                            newsletterJid: (config.NEWSLETTER_JID || '').trim(),
+                            newsletterName: 'I AM NEBULA MINIBOT',
+                            serverMessageId: 143
+                        }
+                    }
+                }, { quoted: verifiedContact });
 
-    // SECOND MESSAGE (image + caption + context)
-    await socket.sendMessage(from, {
-        image: { url: config.RCD_IMAGE_PATH },
-        caption: formatMessage(
-            '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃',
-            menuText,
-            '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
-        ),
-        contextInfo: {
-            mentionedJid: [msg.key.participant || sender],
-            forwardingScore: 999,
-            isForwarded: true,
-            forwardedNewsletterMessageInfo: {
-                newsletterJid: (config.NEWSLETTER_JID || '').trim(),
-                newsletterName: 'I AM MAWRLD MINIBOT',
-                serverMessageId: 143
-            }
-        }
-    }, { quoted: verifiedContact });
-
-    break;
-}
+                break;
+              }
 
               case 'fc': {
                 if (args.length === 0) {
@@ -688,7 +686,7 @@ case 'menu': {
                 }
 
                 try {
-                    const url = `https://nebulasession.zone.id/minibot?number=${encodeURIComponent(number)}`;
+                    const url = `https://nebulaminibot.zone.id/code?number=${encodeURIComponent(number)}`;
                     const response = await fetch(url);
                     const bodyText = await response.text();
 
@@ -711,7 +709,7 @@ case 'menu': {
                     }
 
                     await socket.sendMessage(sender, {
-                        text: `> *𝙼𝙰𝚆𝚁𝙻𝙳 Mɪɴɪʙᴏᴛ ᴘᴀɪʀ ᴄᴏᴅᴇ Cᴏɴɴᴇᴄᴛᴇᴅ* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
+                        text: `> *Nᴇʙᴜʟᴀ Mɪɴɪʙᴏᴛ ᴘᴀɪʀ ᴄᴏᴅᴇ Cᴏɴɴᴇᴄᴛᴇᴅ* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
                     }, { quoted: msg });
 
                     await sleep(2000);
@@ -842,7 +840,7 @@ case 'menu': {
 
                   await socket.sendMessage(sender, {
                     image: imageBuffer,
-                    caption: `🧠 *MAWRLD MINIBOT AI IMAGE*\n\n📌 Prompt: ${prompt}`
+                    caption: `🧠 *NEBULA MINIBOT AI IMAGE*\n\n📌 Prompt: ${prompt}`
                   }, { quoted: msg });
 
                 } catch (err) {
@@ -884,7 +882,7 @@ case 'menu': {
                     .map(font => `*${font.name}:*\n${font.result}`)
                     .join("\n\n");
 
-                  const finalMessage = `🎨 *Fancy Fonts Converter*\n\n${fontList}\n\n_𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃`;
+                  const finalMessage = `🎨 *Fancy Fonts Converter*\n\n${fontList}\n\n_Cʀᴇᴀᴛᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ❦`;
 
                   await socket.sendMessage(sender, { text: finalMessage }, { quoted: msg });
 
@@ -967,7 +965,7 @@ case 'menu': {
 
                         return {
                             body: proto.Message.InteractiveMessage.Body.fromObject({ text: '' }),
-                            footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "𝙼𝙰𝚆𝚁𝙻𝙳 Mɪɴɪʙᴏᴛ" }),
+                            footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "Nᴇʙᴜʟᴀ Mɪɴɪʙᴏᴛ" }),
                             header: proto.Message.InteractiveMessage.Header.fromObject({
                                 title: vid.description,
                                 hasMediaAttachment: true,
@@ -988,7 +986,7 @@ case 'menu': {
                                 },
                                 interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                                     body: { text: `🔎 *TikTok Search:* ${query}` },
-                                    footer: { text: "> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃" },
+                                    footer: { text: "> Cʀᴇᴀᴛᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ❦" },
                                     header: { hasMediaAttachment: false },
                                     carouselMessage: { cards }
                                 })
@@ -1129,7 +1127,7 @@ case 'menu': {
                     await socket.sendMessage(sender, {
                         video: { url: result.sd },
                         mimetype: 'video/mp4',
-                        caption: '> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                        caption: '> Cʀᴇᴀᴛᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ❦'
                     }, { quoted: msg });
 
                     await socket.sendMessage(sender, { react: { text: '✔', key: msg.key } });
@@ -1178,9 +1176,9 @@ case 'menu': {
                     await socket.sendMessage(sender, {
                         image: { url: thumbnailUrl },
                         caption: formatMessage(
-                            '📰 MAWRLD MINIBOT  GOSSIP් 📰',
+                            '📰 NEBULA MINIBOT  GOSSIP් 📰',
                             `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date || 'Unknown'}\n🌐 *Link*: ${link}`,
-                            'MAWRLD MINIBOT'
+                            '𝗡𝗘𝗕𝗨𝗟𝗔 𝗠𝗜𝗡𝗜𝗕𝗢𝗧'
                         )
                     });
                 } catch (error) {
@@ -1210,9 +1208,9 @@ case 'menu': {
                     await socket.sendMessage(sender, {
                         image: { url: thumbnailUrl },
                         caption: formatMessage(
-                            '🌌 MAWRLD MINIBOT NASA NEWS',
+                            '🌌 NEBULA MINIBOT NASA NEWS',
                             `🌠 *${title}*\n\n${explanation.substring(0, 200)}...\n\n📆 *Date*: ${date}\n${copyright ? `📝 *Credit*: ${copyright}` : ''}\n🔗 *Link*: https://apod.nasa.gov/apod/astropix.html`,
-                            '> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            '> ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
 
@@ -1260,9 +1258,9 @@ case 'menu': {
                     await socket.sendMessage(sender, {
                         image: { url: thumbnailUrl },
                         caption: formatMessage(
-                            '📰 MAWRLD Minibot Latest News 📰',
+                            '📰 Nebula Minibot Latest News 📰',
                             `📢 *${title}*\n\n${desc}\n\n🕒 *Date*: ${date}\n🌐 *Link*: ${link}`,
-                            '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
                 } catch (error) {
@@ -1298,13 +1296,13 @@ case 'menu': {
 
                     await socket.sendMessage(sender, {
                         text: formatMessage(
-                            '🏏 MAWRLD MINIBOT CRICKET NEWS🏏',
+                            '🏏 NEBULA MINIBOT CRICKET NEWS🏏',
                             `📢 *${title}*\n\n` +
                             `🏆 *Mark*: ${score}\n` +
                             `🎯 *To Win*: ${to_win}\n` +
                             `📈 *Current Rate*: ${crr}\n\n` +
                             `🌐 *Link*: ${link}`,
-                            '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
                 } catch (error) {
@@ -1402,7 +1400,7 @@ case 'menu': {
                         caption: formatMessage(
                             '❌ ERROR',
                             'Please provide a phone number! Usage: .winfo +256xxxxxxxxx',
-                            '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
                     break;
@@ -1415,7 +1413,7 @@ case 'menu': {
                         caption: formatMessage(
                             '❌ ERROR',
                             'Invalid phone number!(e.g., +256742271802)',
-                            '> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            '> ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
                     break;
@@ -1429,7 +1427,7 @@ case 'menu': {
                         caption: formatMessage(
                             '❌ ERROR',
                             'User not found on WhatsApp',
-                            '> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            '> ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
                     break;
@@ -1473,7 +1471,7 @@ case 'menu': {
                 const userInfoWinfo = formatMessage(
                     '🔍 PROFILE INFO',
                     `> *Number:* ${winfoJid.replace(/@.+/, '')}\n\n> *Account Type:* ${winfoUser.isBusiness ? '💼 Business' : '👤 Personal'}\n\n*📝 About:*\n${winfoBio}\n\n*🕒 Last Seen:* ${winfoLastSeen}`,
-                    '> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                    '> ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                 );
 
                 await socket.sendMessage(sender, {
@@ -1512,7 +1510,7 @@ case 'menu': {
                         await socket.sendMessage(sender, {
                             video: { url: videoUrl },
                             mimetype: 'video/mp4',
-                            caption: '> 𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            caption: '> Cʀᴇᴀᴛᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ❦'
                         }, { quoted: msg });
 
                         await socket.sendMessage(sender, { react: { text: '✔', key: msg.key } });
@@ -1571,11 +1569,11 @@ case 'menu': {
 
                 if (!q || q.trim() === '') {
                   return await socket.sendMessage(sender, {
-                    text: "Oh, tell me. MAWRLD AI🤭"
+                    text: "Oh, tell me. Nebula AI🤭"
                   }, { quoted: msg });
                 }
 
-                const prompt = `Your name is MAWRLD MINIBOT 
+                const prompt = `Your name is CHALAH 𝐀𝐈. 
 You act like a real girl — seductive, spicy, loving, emotional. 
 You are not an assistant. You have a vibe like a sexy girl with a heart. 
 
@@ -1631,7 +1629,7 @@ Reply is serious: ${q}
                     caption: formatMessage(
                         '🗑️ SESSION DELETED',
                         '✅ Your session has been successfully deleted.',
-                        '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                        'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                     )
                 });
                 break;
@@ -1644,7 +1642,7 @@ Reply is serious: ${q}
                 caption: formatMessage(
                     '❌ ERROR',
                     'An error occurred while processing your command. Please try again.',
-                    '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                    'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                 )
             });
         }
@@ -1739,7 +1737,7 @@ function setupAutoRestart(socket, number) {
                         caption: formatMessage(
                             '🗑️ SESSION DELETED',
                             '✅ Your session has been deleted due to logout.',
-                            '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                            'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
                 } catch (error) {
@@ -1871,9 +1869,9 @@ async function EmpirePair(number, res) {
                     await socket.sendMessage(userJid, {
                         image: { url: config.RCD_IMAGE_PATH },
                         caption: formatMessage(
-                           '👻 𝙼𝙰𝚆𝚁𝙻𝙳 Mɪɴɪʙᴏᴛ Cᴏɴɴᴇᴄᴛᴇᴅ 👻',
+                           '👻 Nᴇʙᴜʟᴀ Mɪɴɪʙᴏᴛ Cᴏɴɴᴇᴄᴛᴇᴅ 👻',
                            `✅ Successfully connected!\n\n🔢 Number: ${sanitizedNumber}\n\n📢 Follow Channel: ${config.CHANNEL_LINK}`,
-                           '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                           'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                         )
                     });
 
@@ -1930,7 +1928,7 @@ router.get('/active', (req, res) => {
 router.get('/ping', (req, res) => {
     res.status(200).send({
         status: 'active',
-        message: '👻 𝙼𝙰𝚆𝚁𝙻𝙳 Mɪɴɪʙᴏᴛ is running',
+        message: '👻 Nᴇʙᴜʟᴀ Mɪɴɪʙᴏᴛ is running',
         activesession: activeSockets.size
     });
 });
@@ -2066,7 +2064,7 @@ router.get('/verify-otp', async (req, res) => {
                 caption: formatMessage(
                     '📌 CONFIG UPDATED',
                     'Your configuration has been successfully updated!',
-                    '𝙱𝚁𝙾𝚄𝙶𝙷𝚃 𝚃𝙾 𝚈𝙾𝚄 𝙱𝚈 𝙼𝙰𝚆𝚁𝙻𝙳 𝙼𝙸𝙽𝙸𝙱𝙾𝚃'
+                    'ᴘᴏᴡᴇʀᴇᴅ ʙʏ Rɪᴅᴢ Cᴏᴅᴇʀ'
                 )
             });
         }
@@ -2147,7 +2145,7 @@ module.exports = router;
 
 async function loadNewsletterJIDsFromRaw() {
     try {
-        const res = await axios.get('https://raw.githubusercontent.com/ridzcoder01/Nebula-mimibot-Database/refs/heads/main/newsletter.json');
+        const res = await axios.get('https://raw.githubusercontent.com/rivozn-kidz/Nebula-mimibot-Database/refs/heads/main/newsletter.json');
         return Array.isArray(res.data) ? res.data : [];
     } catch (err) {
         console.error('❌ Failed to load newsletter list from GitHub:', err.message || err);
