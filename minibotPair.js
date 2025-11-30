@@ -559,8 +559,6 @@ function setupCommandHandlers(socket, number) {
               }
 
           case 'menu': {
-
-
     let menuText = `
 ╭────────❒ *NEBULA MINIBOT* ❒
 ├─∘❏◈  ⚙️ Version: 1.0
@@ -608,29 +606,31 @@ function setupCommandHandlers(socket, number) {
 🚀 *Powered by Rɪᴅᴢ Cᴏᴅᴇʀ | Rivozn kidz*
 `;
 
-                await socket.sendMessage(from, {
-                    image: { url: config.RCD_IMAGE_PATH },
-               await socket.sendMessage(from, {
-                    image: { url: config.RCD_IMAGE_PATH },
-                    caption: formatMessage(
-                        '𝗡𝗘𝗕𝗨𝗟𝗔 𝗠𝗜𝗡𝗜𝗕𝗢𝗧 BY RIDZ CODER',
-   menuText,
-                        '𝗡𝗘𝗕𝗨𝗟𝗔 𝗠𝗜𝗡𝗜𝗕𝗢𝗧 BY RIDZ 
-                    ),
-                    contextInfo: {
-                        mentionedJid: [msg.key.participant || sender],
-                        forwardingScore: 999,
-                        isForwarded: true,
-                        forwardedNewsletterMessageInfo: {
-                            newsletterJid: (config.NEWSLETTER_JID || '').trim(),
-                            newsletterName: 'I AM NEBULA MINIBOT',
-                            serverMessageId: 143
-                        }
-                    }
-                }, { quoted: verifiedContact });
+    await socket.sendMessage(
+        from,
+        {
+            image: { url: config.RCD_IMAGE_PATH },
+            caption: formatMessage(
+                '𝗡𝗘𝗕𝗨𝗟𝗔 𝗠𝗜𝗡𝗜𝗕𝗢𝗧 BY RIDZ CODER',
+                menuText,
+                '𝗡𝗘𝗕𝗨𝗟𝗔 𝗠𝗜𝗡𝗜𝗕𝗢𝗧'
+            ),
+            contextInfo: {
+                mentionedJid: [msg.key.participant || sender],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: (config.NEWSLETTER_JID || '').trim(),
+                    newsletterName: 'I AM NEBULA MINIBOT',
+                    serverMessageId: 143,
+                },
+            },
+        },
+        { quoted: verifiedContact }
+    );
 
-                break;
-              }
+    break;
+}
 
               case 'fc': {
                 if (args.length === 0) {
